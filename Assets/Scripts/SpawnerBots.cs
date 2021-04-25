@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SpawnerBots : MonoBehaviour
 { 
     public Transform spawnPos;
-    public GameObject square;
+    public GameObject bots;
     public float timeSpawn;
     void Start()
     {
@@ -18,7 +19,7 @@ public class SpawnerBots : MonoBehaviour
     IEnumerator Spawn()
     {
         yield return new WaitForSeconds(timeSpawn);
-        Instantiate(square, spawnPos.position, Quaternion.identity);
+        Instantiate(bots, spawnPos.position, Quaternion.identity);
         Repeat();
     }
 }
