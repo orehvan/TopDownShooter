@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198828695}
   - component: {fileID: 198828696}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212262117}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -318,7 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1419422825}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: SpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -410,6 +410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256252909011148796, guid: cdc1c0ba1f424354993593a28c827fdf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc1c0ba1f424354993593a28c827fdf, type: 3}
