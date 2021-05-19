@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,8 +8,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 _moveDirection;
     private Vector2 _mousePos;
-    
-    void Update()
+
+    private void Update()
     {
         ProcessInputs();
     }
@@ -18,9 +17,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Rotate();
     }
 
-    void ProcessInputs()
+    private void ProcessInputs()
     {
         var moveX = Input.GetAxisRaw("Horizontal");
         var moveY = Input.GetAxisRaw("Vertical");
@@ -30,10 +30,11 @@ public class PlayerController : MonoBehaviour
         _mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    void Move()
-    {
+    private void Move() =>
         rb.MovePosition(rb.position + _moveDirection * moveSpeed * Time.fixedDeltaTime);
-        
+
+    private void Rotate()
+    {
         var lookDirection = _mousePos - rb.position;
         var mouseAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = mouseAngle;
