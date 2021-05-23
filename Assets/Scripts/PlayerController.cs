@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private void Rotate()
     {
-        var lookDirection = _mousePos - rb.position;
+        var lookDirection = _mousePos;
         var mouseAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = mouseAngle;
     }
