@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        _moveDirection = Vector2.down * moveSpeed;
-        rb.velocity = _moveDirection;
+        // _moveDirection = Vector2.down * moveSpeed;
+        // rb.velocity = _moveDirection;
     }
 }

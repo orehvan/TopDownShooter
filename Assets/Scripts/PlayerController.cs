@@ -30,8 +30,11 @@ public class PlayerController : MonoBehaviour
         _mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    private void Move() =>
+    private void Move()
+    {
         rb.MovePosition(rb.position + _moveDirection * moveSpeed * Time.fixedDeltaTime);
+        transform.position = rb.position;
+    }
 
     private void Rotate()
     {
