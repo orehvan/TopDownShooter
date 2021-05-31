@@ -9,11 +9,12 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public float spawnTime;
     public float spawnDelay;
-    public bool stopSpawning = false;
-    
+    private int stopSpawning;
+
     void Start()
     {
         InvokeRepeating(nameof(SpawnObject), spawnTime, spawnDelay);
+        stopSpawning++;
     }
 
     void SpawnObject()
@@ -24,7 +25,11 @@ public class EnemySpawner : MonoBehaviour
         enemy.GetComponent<AIDestinationSetter>().target = player.transform;
         // AIDestinationSetter.target = player.transform;
 
-        if (stopSpawning)
-            CancelInvoke(nameof(SpawnObject));
+        if (stopSpawning >= 3)
+            while (true)
+            {
+                CancelInvoke(nameof(Start));
+
+                
     }
 }
