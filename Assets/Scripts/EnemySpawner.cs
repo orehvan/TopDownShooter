@@ -22,7 +22,6 @@ public class EnemySpawner : MonoBehaviour
         var enemy = Instantiate(enemyPrefab, randomSpawnPoint, transform.rotation);
 
         enemy.GetComponent<AIDestinationSetter>().target = player.transform;
-        // AIDestinationSetter.target = player.transform;
 
         if (stopSpawning)
             CancelInvoke(nameof(SpawnObject));
